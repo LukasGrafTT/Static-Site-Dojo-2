@@ -1,0 +1,17 @@
+{
+  "name": "static-site-dojo",
+  "version": "1.0.0",
+  "description": "## Scenario",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/Static-Site-Dojo-2/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
