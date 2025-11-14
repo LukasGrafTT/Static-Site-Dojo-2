@@ -1,0 +1,51 @@
+<div class="training-detail">
+    <h1>{{ training.title }}</h1>
+    
+    <div class="training-meta">
+        <span class="meta-item">⏱️ Length: {{ training.duration }}</span>
+        <span class="meta-item">📊 Level: {{ training.level }}</span>
+        <span class="meta-item">👨‍🏫 Instructor: {{ training.instructor }}</span>
+    </div>
+
+    <h2>Description</h2>
+    <p>{{ training.description }}</p>
+    
+    <h2>Prerequisites</h2>
+    <p>{{ training.prerequisites }}</p>
+
+    <h2>What you will learn</h2>
+    <ul class="learning-outcomes">
+        {% for outcome in training.learningOutcomes %}
+        <li>{{ outcome }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="signup-form">
+    <h2>Sign Up for This Training</h2>
+    <form action="{{ api.register }}" method="POST">
+        <input type="hidden" name="training_id" value="{{ training.id }}">
+        
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">e-Mail *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="company">company</label>
+            <input type="text" id="company" name="company">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>

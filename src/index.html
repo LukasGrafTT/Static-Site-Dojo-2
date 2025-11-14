@@ -1,0 +1,15 @@
+<h1>All Trainings</h1>
+
+<div class="training-grid">
+{% for training in trainings %}
+    <div class="training-card">
+        <h3>{{ training.title }}</h3>
+        <p>{{ training.description }}</p>
+        <div class="training-meta">
+            <span class="meta-item">⏱️ {{ training.duration }}</span>
+            <span class="meta-item">📊 {{ training.level }}</span>
+        </div>
+        <a href="/trainings/{{ training.id }}/" class="btn">View Details</a>
+    </div>
+{% endfor %}
+</div>
